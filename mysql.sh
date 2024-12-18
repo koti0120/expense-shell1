@@ -1,6 +1,6 @@
 #!/bin/bah
 source ./common.sh
-check_root()
+check_root
 
 echo "Please enter db password:"
 read -s mysql_root_password
