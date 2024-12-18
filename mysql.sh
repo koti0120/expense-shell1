@@ -5,7 +5,7 @@ check_root
 echo "Please enter db password:"
 read -s mysql_root_password
 
-dnf install mysql-serddver -y &>>$LOG_FILE
+dnf install mysql-server -y &>>$LOG_FILE
 # VALIDATE $? "installing mysql-server"
 
 systemctl enable mysqld &>>$LOG_FILE
