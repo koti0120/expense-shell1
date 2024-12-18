@@ -17,7 +17,7 @@ systemctl start mysqld &>>$LOG_FILE
 # mysql_secure_installation --set-root-pass mysql_root_password &>>$LOG_FILE
 # VALIDATE $? "setting up root password"
 
-mysql -h db.kanakam.top -u root -p${mysql_root_password} -e 'show databases;' &>>$LOG_FILE
+mysql -h db.kanakam.top -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOG_FILE
 if [ $? -ne 0 ]
 then
     mysql_secure_installation --set-root-pass ${mysql_root_password} &>>$LOG_FILE
