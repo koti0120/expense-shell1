@@ -7,6 +7,9 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+
+echo "Please enter db password:"
+read -s mysql_root_password
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -33,5 +36,5 @@ VALIDATE $? "enable mysqld"
 systemctl start mysqld &>>$LOG_FILE
 VALIDATE $? "start mysqld"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE
+mysql_secure_installation --set-root-pass mysql_root_password &>>$LOG_FILE
 VALIDATE $? "setting up root password"
